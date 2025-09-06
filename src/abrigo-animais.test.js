@@ -28,4 +28,32 @@ describe('Abrigo de Animais', () => {
       expect(resultado.lista.length).toBe(4);
       expect(resultado.erro).toBeFalsy();
   });
+
+    test('Deve limitar adoção a no máximo 3 animais por pessoa', () => {
+    const resultado = new AbrigoAnimais().encontraPessoas(
+      'RATO,BOLA,LASER,NOVELO,CAIXA,SKATE',
+      'RATO,BOLA,LASER,NOVELO,CAIXA,SKATE',
+      'Rex,Bebe,Bola,Fofo,Mimi,Zero'
+    );
+
+    const quantidadeAnimalPessoa1 = resultado.lista.filter(r => r.includes('pessoa 1')).length;
+    const quantidadeAnimalPessoa2 = resultado.lista.filter(r => r.includes('pessoa 2')).length;
+
+    expect(quantidadeAnimalPessoa1).toBeLessThanOrEqual(3);
+    expect(quantidadeAnimalPessoa2).toBeLessThanOrEqual(3);
+
+    expect(resultado.lista.length).toBe(6);
+    expect(resultado.erro).toBeFalsy();
+  });
+
+  test('Deve manter jabuti no abrigo se pessoa não tiver outro animal', () => {
+    const resultado = new AbrigoAnimais().encontraPessoas(
+      'SKATE,RATO',
+      'CAIXA,BOLA',
+      'Loco'
+    );
+
+    expect(resultado.lista[0]).toBe('Loco - abrigo');
+    expect(resultado.erro).toBeFalsy();
+  });
 });
