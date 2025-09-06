@@ -15,6 +15,17 @@ class AbrigoAnimais {
 
   encontraPessoas(brinquedosPessoa1, brinquedosPessoa2, ordemAnimais) {
   }
+
+  validarBrinquedos(brinquedosPessoa) {
+    const brinquedos = new Set();
+    
+    for(let brinquedo of brinquedosPessoa) {
+      if(!this.brinquedosValidos.has(brinquedo) || brinquedos.has(brinquedo)) throw 'Brinquedo Inválido';
+      brinquedos.add(brinquedo);
+    }
+
+    return brinquedosPessoa;
+  }
 }
 
 export { AbrigoAnimais as AbrigoAnimais };
