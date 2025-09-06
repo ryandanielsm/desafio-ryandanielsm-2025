@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ABRIGO DE ANIMAIS
 
 ## COMO BAIXAR O CÓDIGO E SUBMETER MINHA SOLUÇÃO?
@@ -117,6 +116,3 @@ export { AbrigoAnimais as AbrigoAnimais };
 Se todos os passos forem seguidos corretamente, você terá um repositório como o da figura abaixo (lembrando que é permitido criar mais arquivos), onde `seuUsername` é o seu usuário do GitHub, que você informou no questionário da Gupy.
 
 ![Exemplo de repositório](estrutura-repositorio.png)
-=======
-# desafio-ryandanielsm-2025
->>>>>>> 572055c8731a0e71518b89ee88a20f1a6b2b4caa
