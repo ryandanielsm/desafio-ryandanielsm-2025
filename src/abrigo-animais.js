@@ -9,6 +9,8 @@ class AbrigoAnimais {
       Bebe: { tipo:'cão', brinquedos: ['LASER', 'RATO', 'BOLA'] }, 
       Loco: { tipo:'jabuti', brinquedos: ['SKATE', 'RATO'] } 
     }
+
+    this.brinquedosValidos = new Set(['RATO','BOLA','LASER','CAIXA','NOVELO','SKATE']);
   }
 
   encontraPessoas(brinquedosPessoa1, brinquedosPessoa2, ordemAnimais) {
