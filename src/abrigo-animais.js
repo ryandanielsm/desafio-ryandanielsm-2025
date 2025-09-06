@@ -26,6 +26,24 @@ class AbrigoAnimais {
 
     return brinquedosPessoa;
   }
+
+  conferirOrdem(animal, brinquedosPessoa) {
+
+    let posicaoBrinquedoFavorito = 0;
+
+    for(let brinquedo of brinquedosPessoa) {
+      if(brinquedo === animal.brinquedos[posicaoBrinquedoFavorito]) {
+        posicaoBrinquedoFavorito++;
+      }
+
+      if (posicaoBrinquedoFavorito === animal.brinquedos.length) {
+        return true;
+      }
+    }
+
+     return false;
+  }
+
 }
 
 export { AbrigoAnimais as AbrigoAnimais };
